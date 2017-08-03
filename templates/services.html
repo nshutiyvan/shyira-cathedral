@@ -1,0 +1,82 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+        <style>
+         {% block style%}
+                body {
+                    display: flex;
+                    min-height: 140vh;
+                    flex-direction: column;
+                }
+
+                main {
+                    flex: 1 0 auto;
+                  }
+
+
+                .slick-slide img{
+                  width:100%;
+                }
+                .box-container-info{
+                    width: 100%;
+                    margin-top: 20px;
+                }
+                strong{
+                    font-size:22px;
+                    padding: 20px 0px;
+                }
+                h5{
+                    font-size: 35px;
+                }
+        {% endblock %}
+        </style>
+
+<script>
+    {% block jquery %}
+        $(".dropdown-button").dropdown();
+        $('.carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    {% endblock %}
+</script>
+{% include 'navbar2.html'  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col m9">
+            <ul class="box-container-info" style="">
+                <h5>SERVICES</h5>
+                <p><strong>Sundays at 10:00am</strong><br>
+                Worship at St James' is approached with a straightforward reverence for God.
+                We use traditional Anglican services with creativity and flexibility,
+                including singing hymns with our fine pipe organ and listening to beautiful music
+                sung by our professional vocal ensemble, The Old Cathedral Voices. All services are easy to follow,
+                with all you need supplied in one booklet.
+                </p>
+                <p>
+                    <strong>Children</strong> join in our worship initially and then depart formally about 5-10 minutes after the service begins.
+                They then experience the next parts of the service (confession, prayer,
+                bible teaching) at an age-appropriate level using a Montessori-style education program,
+                before returning to join us all gathering for Holy Communion as a church family.
+                A crying/feeding room is available at the rear of the church for those with babies.
+                </p>
+                <p><strong>Wednesdays at 12:30pm</strong><br>"Real Food" (Last service 23rd December 2015, resumes February 2016).
+                "Real Food" is a half-hour service tailor-made for city workers, offering the bare essentials of Christian nourishment -
+                the reading of scripture and participation in Holy Communion. Instead of a sermon,
+                we 'preach' an extended text of scripture and frame this and the communion with a few simple prayers also taken from the bible.
+                It offers a different experience and excellent complement to your Sunday worship, wherever that may be.
+                </p>
+                <p><strong>4th Sunday at 7:00pm</strong><br> Anglican Men's Society Evensong
+                In a tradition stretching back over forty years, the Anglican Men's Society gather at the Old Cathedral for a monthly evensong service,
+                sponsored each month by various churches from around the diocese. It is held at 7:00pm on the fourth Sunday of each month from February to November.
+                All (men and women alike!) are welcome.
+                </p>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% include 'footer.html' %}

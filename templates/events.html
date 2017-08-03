@@ -1,0 +1,55 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+        <style>
+         {% block style%}
+                body {
+                    display: flex;
+                    min-height: 140vh;
+                    flex-direction: column;
+                }
+
+                main {
+                    flex: 1 0 auto;
+                  }
+
+
+                .slick-slide img{
+                  width:100%;
+                }
+                strong{
+                    color:#7CA0C7;
+                    font-size:18px;
+                }
+                span{
+                    color:#7CA0C7;
+                }
+                h5{
+                    font-size: 35px;
+                }
+                .event-box{
+                    margin-top: 20px;
+                    margin-left: 293px;
+                    display: block;
+                    padding: 20px;
+                }
+        {% endblock %}
+        </style>
+{% include 'navbar2.html'  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col m9">
+            {% for event in events%}
+            <div class="event-box">
+                <div class="row">
+                <h5>{{event.title}}</h5>
+                <p>{{event.details}}</p>
+                <p>Due on <span> {{event.due}}</span> at <strong>{{event.address}}</strong></p>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% include 'footer.html' %}

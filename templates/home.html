@@ -1,0 +1,122 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+        <style>
+         {% block style%}
+                .carousel_box{
+                    margin-top: -90px;
+                }
+
+                body {
+                    display: flex;
+                    min-height: 100vh;
+                    flex-direction: column;
+                }
+
+                main {
+                    flex: 1 0 auto;
+                  }
+
+                .box-container{
+                    margin-top: -5px;
+                    background-color:#1a237e;
+                    padding: 6px;
+                    border-radius: 3%;
+                    text-align: center;
+                }
+                .box-content{
+                    color:white;
+                    border: 1px #2f3c8d solid ;
+                    background-color:#2f3c8d;
+                    border-top-left-radius:19px;
+                    border-top-right-radius:19px;
+                }
+                .box-header-text{
+                    border-top-left-radius:19px;
+                    border-top-right-radius:19px;
+                    background-color:#212b64;
+                    margin:-1px;
+                }
+                .box-image{
+                   width:250px;
+                    height:250px;
+                    display:block;
+                    margin-left:50px;
+                }
+                .navbar-container{
+                    margin-left: 10px;
+                }
+                .carousel{
+                  width:90%;
+                  margin:0px auto;
+                }
+                .slick-slide{
+                  margin:10px;
+                }
+                .slick-slide img{
+                  width:100%;
+                }
+                .box-container-info{
+                    width: 100%;
+                    margin-top: 20px;
+                }
+
+        {% endblock %}
+        </style>
+
+<script>
+    {% block jquery %}
+        $(".dropdown-button").dropdown();
+        $('.carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    {% endblock %}
+</script>
+{% include 'navbar2.html'  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col m9">
+                {% include 'carousel2.html' %}
+            <ul class="box-container-info" style="">
+                <h5>WELCOME TO ST JAMES’ OLD CATHEDRAL</h5>
+                <p>St James’ Old Cathedral is an Anglican church seeking to love, enjoy, and worship the Triune God we meet through Jesus Christ. We gather within the simple beauty of Melbourne's oldest building to be refreshed by the mercies of God, which are new every morning. We are a warm, happy, truly all-age community that enjoys traditional Anglican worship, faithful bible teaching, classic hymns and sublime choral music spanning the renaissance era to new commissions.
+                St James' surprises people. Many who had previously drifted away from church have found the Old Cathedral an ideal place to renew their relationship with God; and many visitors to our city have made us their home away from home. Do join us!
+                Reverend Matt Williams
+                Senior Minister
+                </p>
+            </ul>
+        </div>
+        <div class="col m3">
+            <div class="box-container">
+                <ul class="box-content">
+                    <li>
+                        <h5 class="box-header-text">Events</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda exercitationem incidunt ipsa quos rem!
+                            Accusantium, delectus unde. Aliquam neque, sunt.
+                        </p>
+                        <a href="">Learn More</a>
+                        <!--<img  class="box-image" src="http://s7d2.scene7.com/is/image/PetSmart/ARTHMB-HowDoISetUpMyAquariumForMultipleFish-20160818?$AR1104$">-->
+                    </li>
+                </ul>
+                <ul class="box-content">
+                <li>
+                    <h5 class="box-header-text">Contact</h5>
+                    <p>Rev.NIYIZIBIZI Eugene</p>
+                    <p>Tel: +250788847783</p>
+                    <p>Vicar of Shyira Diosece Cathedral</p>
+                    <p>Musanze Northern Province Rwanda</p>
+                    <p>E-mail: niyibizi1@gmail.com</p>
+                    <p>Domain:www.shyiracathedral.org</p>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% include 'footer.html' %}

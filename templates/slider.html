@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+{% include 'navbar2.html'  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <p class="text-info"></p>
+    </div>
+</div>
+{% endblock%}
+{% include 'footer.html' %}
+<script>
+    {% block jquery%}
+    $(document).ready(function(){
+        console.log("woo");
+        $(".text-info").text("wowo jquery is working");
+    })
+    {% endblock %}
+</script>

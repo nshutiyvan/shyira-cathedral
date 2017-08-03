@@ -1,0 +1,45 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+        <style>
+         {% block style%}
+                body {
+                    display: flex;
+                    min-height: 140vh;
+                    flex-direction: column;
+                }
+
+                main {
+                    flex: 1 0 auto;
+                }
+
+                .contact-box{
+                    width: 100%;
+                    margin-top: 96px;
+                    margin-left: 359px;
+                }
+
+        {% endblock %}
+        </style>
+{% include 'navbar2.html'  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col m9">
+            <div class="contact-box">
+                <div class="row">
+                  <div class="col s12 m5">
+                    <div class="card-panel indigo darken-4">
+                      <span class="white-text">Thank you for your message we will get back to you soon as possible thank you
+                      </span>
+                        <div class="card-action">
+                          <a href="/">Go to home page</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% include 'footer.html' %}

@@ -1,0 +1,22 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+{% block content %}
+    {% include 'navbar.html'  %}
+    <div class="container">
+        <div class="row">
+            {% for destination in destinations%}
+            <div class="col s6 m4">
+                <div class="card">
+                    <div class="card-image">
+                      <img src="{% static 'img/gorilla.jpg' %}">
+                        <a href="{{ destination.get_absolute_url }}"><span class="card-title ndigo-text darken-4">{{ destination.title }}</span></a>
+                    </div>
+                    <div class="card-content">
+                      <p>{{ destination.body }}</p>
+                    </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock%}

@@ -1,0 +1,74 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+        <style>
+         {% block style%}
+                body {
+                    display: flex;
+                    min-height: 140vh;
+                    flex-direction: column;
+                }
+
+                main {
+                    flex: 1 0 auto;
+                }
+
+                .contact-box{
+                    width: 100%;
+                    margin-top: 70px;
+                }
+                h5{
+                    font-size: 35px;
+                    text-align: Center;
+                    margin-left: 250px;
+                }
+                p{
+                    text-align: center;
+                    margin-left: 250px;
+                }
+        {% endblock %}
+        </style>
+{% include 'navbar2.html'  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col m9">
+            <div class="contact-box">
+                <h5>CONTACT US</h5>
+                    <p>Please feel free to leave your message here</p>
+                  <div class="row">
+                    <form class="col s12 m8 offset-m4" method="post" action="/contact/">{% csrf_token %}
+                        <div class="row">
+                            <div class="input-field col s6 m6">
+                              <input id="first_name" type="text" class="validate" name="firstname">
+                              <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6 m6">
+                              <input id="last_name" type="text" class="validate" name="lastname">
+                              <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                              <input id="email" type="email" class="validate" name="email">
+                              <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <textarea id="textarea1" class="materialize-textarea" name="message"></textarea>
+                                <label for="textarea1">Your message</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="btn waves-effect waves-light indigo darken-4" type="submit" name="action">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% include 'footer.html' %}

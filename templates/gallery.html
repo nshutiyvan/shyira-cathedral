@@ -1,0 +1,59 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+        <style>
+         {% block style%}
+                body {
+                    display: flex;
+                    min-height: 140vh;
+                    flex-direction: column;
+                }
+
+                main {
+                    flex: 1 0 auto;
+                  }
+
+
+                .slick-slide img{
+                  width:100%;
+                }
+                strong{
+                    color:#7CA0C7;
+                    font-size:18px;
+                }
+                span{
+                    color:#7CA0C7;
+                }
+                h5{
+                    font-size: 35px;
+                }
+                .event-box{
+                    margin-top: 20px;
+                    margin-left: 293px;
+                    display: block;
+                    padding: 20px;
+                }
+                .image-box{
+                    padding: 10px;
+                }
+        {% endblock %}
+        </style>
+{% include 'navbar2.html'  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col m12 s6">
+            <div class="row">
+                <form action=""></form>
+            </div>
+            <div class="row">
+            {% for image in allimages %}
+                    <div class="col m4 s6 image-box">
+                        <img src="{{ image.image.url }}" style="width:350px;height:350px">
+                    </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% include 'footer.html' %}
