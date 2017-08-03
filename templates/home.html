@@ -59,28 +59,50 @@
                     width: 100%;
                     margin-top: 20px;
                 }
+                .flex-caption {
+                    width: 96%;
+                    padding: 2%;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, .5);
+                    color: #fff;
+                    text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+                    font-size: 14px;
+                    line-height: 18px;
+                }
 
         {% endblock %}
         </style>
 
-<script>
-    {% block jquery %}
-        $(".dropdown-button").dropdown();
-        $('.carousel').slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear'
-        });
-    {% endblock %}
-</script>
 {% include 'navbar2.html'  %}
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col m9">
-                {% include 'carousel2.html' %}
+             <div class="flexslider">
+              <ul class="slides">
+                        <li>
+                            <img src="{% static 'flex2/images/kitchen_adventurer_lemon.jpg' %}" />
+                            <p class="flex-caption">Adventurer Cheesecake Brownie</p>
+                        </li>
+                        <li>
+                            <img src="{% static 'flex2/images/kitchen_adventurer_donut.jpg' %}" />
+                            <p class="flex-caption">Adventurer Cheesecake Brownie</p>
+                        </li>
+                        <li>
+                            <img src="{% static 'flex2/images/kitchen_adventurer_caramel.jpg' %}" />
+                            <p class="flex-caption">Adventurer Cheesecake Brownie</p>
+                        </li>
+                        <li>
+                            <img src="{% static 'flex2/images/kitchen_adventurer_donut.jpg' %}" />
+                            <p class="flex-caption">Adventurer Cheesecake Brownie</p>
+                        </li>
+                        <li>
+                            <img src="{% static 'flex2/images/kitchen_adventurer_caramel.jpg' %}" />
+                            <p class="flex-caption">Adventurer Cheesecake Brownie</p>
+                        </li>
+              </ul>
+            </div>
             <ul class="box-container-info" style="">
                 <h5>WELCOME TO ST JAMES’ OLD CATHEDRAL</h5>
                 <p>St James’ Old Cathedral is an Anglican church seeking to love, enjoy, and worship the Triune God we meet through Jesus Christ. We gather within the simple beauty of Melbourne's oldest building to be refreshed by the mercies of God, which are new every morning. We are a warm, happy, truly all-age community that enjoys traditional Anglican worship, faithful bible teaching, classic hymns and sublime choral music spanning the renaissance era to new commissions.

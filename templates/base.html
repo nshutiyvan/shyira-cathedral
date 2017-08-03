@@ -16,6 +16,14 @@
       {% block content%}
       {% endblock %}
       {% include 'javascript.html' %}
-      {% block jquery%}{% endblock %}
+      <script>
+        $(document).ready(function(){
+            {% block jquery%}
+              $('.flexslider').flexslider({
+               animation: "slide"
+              });
+            {% endblock %}
+        });
+      </script>
     </body>
   </html>

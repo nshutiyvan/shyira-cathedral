@@ -2,11 +2,19 @@
 {% include 'base.html' %}
 {% include 'navbar2.html'  %}
 {% block content %}
-<div class="container">
-    <div class="flexslider">
+<style>
+    {%block style%}
+        .carousel-container{
+            max-width: 600px;
+            max-height: 600px;
+        }
+    {% endblock %}
+</style>
+<div class="carousel-container">
+    <div id="slider" class="flexslider">
       <ul class="slides">
             <li>
-                <img src="{% static 'flex2/images/kitchen_adventurer_lemon.jpg' %}" />
+              <img src="{% static 'flex2/images/kitchen_adventurer_lemon.jpg' %}" />
             </li>
             <li>
               <img src="{% static 'flex2/images/kitchen_adventurer_donut.jpg' %}" />
@@ -16,10 +24,18 @@
             </li>
       </ul>
     </div>
-    <div class="custom-navigation">
-      <a href="#" class="flex-prev">Prev</a>
-      <div class="custom-controls-container"></div>
-      <a href="#" class="flex-next">Next</a>
+    <div id="carousel" class="flexslider">
+      <ul class="slides">
+            <li>
+              <img src="{% static 'flex2/images/kitchen_adventurer_lemon.jpg' %}" />
+            </li>
+            <li>
+              <img src="{% static 'flex2/images/kitchen_adventurer_donut.jpg' %}" />
+            </li>
+            <li>
+              <img src="{% static 'flex2/images/kitchen_adventurer_caramel.jpg' %}" />
+            </li>
+      </ul>
     </div>
 </div>
 {% endblock%}
@@ -27,11 +43,22 @@
 <script>
     {% block jquery%}
     $(document).ready(function(){
-        $('.flexslider').flexslider({
+        $('#carousel').flexslider({
             animation: "slide",
-            controlsContainer: $(".custom-controls-container"),
-            customDirectionNav: $(".custom-navigation a")
-        });
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            itemWidth: 210,
+            itemMargin: 5,
+            asNavFor: '#slider'
+          });
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel"
+      });
     });
     {% endblock %}
 </script>
