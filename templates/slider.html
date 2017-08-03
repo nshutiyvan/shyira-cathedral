@@ -3,8 +3,23 @@
 {% include 'navbar2.html'  %}
 {% block content %}
 <div class="container">
-    <div class="row">
-        <p class="text-info"></p>
+    <div class="flexslider">
+      <ul class="slides">
+            <li>
+                <img src="{% static 'flex2/images/kitchen_adventurer_lemon.jpg' %}" />
+            </li>
+            <li>
+              <img src="{% static 'flex2/images/kitchen_adventurer_donut.jpg' %}" />
+            </li>
+            <li>
+              <img src="{% static 'flex2/images/kitchen_adventurer_caramel.jpg' %}" />
+            </li>
+      </ul>
+    </div>
+    <div class="custom-navigation">
+      <a href="#" class="flex-prev">Prev</a>
+      <div class="custom-controls-container"></div>
+      <a href="#" class="flex-next">Next</a>
     </div>
 </div>
 {% endblock%}
@@ -12,8 +27,11 @@
 <script>
     {% block jquery%}
     $(document).ready(function(){
-        console.log("woo");
-        $(".text-info").text("wowo jquery is working");
-    })
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlsContainer: $(".custom-controls-container"),
+            customDirectionNav: $(".custom-navigation a")
+        });
+    });
     {% endblock %}
 </script>
