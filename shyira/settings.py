@@ -23,11 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v@651y09kwqje(j5&9)vzz8^8nb2$k(5xy@z73uh(-^neqt9bv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['shyira-cathedral.herokuapp.com']
-
-
+ALLOWED_HOSTS = ['shyira-cathedral.herokuapp.com','localhost','127.0.0.1:8000','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = (
@@ -103,13 +101,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     #'/var/www/static/',
 )
-MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, "staticfiles", "media_root")
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
