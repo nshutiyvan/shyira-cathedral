@@ -25,7 +25,7 @@ SECRET_KEY = 'v@651y09kwqje(j5&9)vzz8^8nb2$k(5xy@z73uh(-^neqt9bv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://shyira-cathedral.herokuapp.com']
+ALLOWED_HOSTS = ['shyira-cathedral.herokuapp.com']
 
 
 # Application definition
