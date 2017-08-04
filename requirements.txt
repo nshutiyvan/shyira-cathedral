@@ -1,6 +1,7 @@
 appdirs==1.4.3
 Django==1.11
 django-cors-headers==2.0.2
+django-storages==1.6.5
 djangorestframework==3.6.2
 djangorestframework-jwt==1.9.0
 ExifRead==2.1.2
